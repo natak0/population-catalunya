@@ -1,21 +1,11 @@
 import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import {
-  AppContext,
-} from "./services/AppContext/AppContextCreator";
+import { AppContext } from "./services/AppContext/AppContextCreator";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login/Login";
 
 function App() {
   const [data, setData] = useState();
-  /* const initialState = { updatedData: data };
-  function reducer(state, action) {
-    switch (action.type) {
-      case "update":
-        return { ...initialState, updatedData: action };
-      default:
-        throw new Error();
-    }
-  }
-  const [state, dispatch] = useReducer(reducer, initialState); */
 
   useEffect(() => {
     async function fetchData() {
@@ -30,9 +20,12 @@ function App() {
   return (
     data && (
       <AppContext.Provider value={{ data }}>
-{/*         <AppDispatchContext.Provider value={dispatch}> */}
-          <Dashboard />
-{/*         </AppDispatchContext.Provider> */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
       </AppContext.Provider>
     )
   );

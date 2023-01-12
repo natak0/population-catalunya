@@ -8,6 +8,7 @@
   height: 32px;
   border-radius: 5px;
   position: relative;
+  border: 1px solid gray;
 }
 .search__icon {
   position: absolute;

@@ -18,7 +18,7 @@ function Navbar() {
           d'habitants. Dades del darrer padró disponible, any 2019-2020.
         </p>
       </div>
-      <a href="/" className="menu-login">
+      <a href="/login" className="menu-login">
         <LoginIcon />
       </a>
     </nav>

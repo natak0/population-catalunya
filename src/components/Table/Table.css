@@ -30,6 +30,9 @@
 .table td {
   height: 36px;
 }
+.table td:not(:first-child) {
+  padding-left:px;
+}
 @media (width <= 30em) {
   .table {
     width: 100%;

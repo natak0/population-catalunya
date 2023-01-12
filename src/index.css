@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.8125rem;
   height: 100vh;
 }
@@ -13,3 +13,6 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
