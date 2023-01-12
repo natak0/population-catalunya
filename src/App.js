@@ -1,13 +1,12 @@
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import {
   AppContext,
-  AppDispatchContext,
 } from "./services/AppContext/AppContextCreator";
 
 function App() {
   const [data, setData] = useState();
-  const initialState = { updatedData: data };
+  /* const initialState = { updatedData: data };
   function reducer(state, action) {
     switch (action.type) {
       case "update":
@@ -16,7 +15,7 @@ function App() {
         throw new Error();
     }
   }
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState); */
 
   useEffect(() => {
     async function fetchData() {
@@ -28,13 +27,12 @@ function App() {
     fetchData();
   }, []);
 
-  console.log("data", data);
   return (
     data && (
-      <AppContext.Provider value={{ data, state }}>
-        <AppDispatchContext.Provider value={dispatch}>
+      <AppContext.Provider value={{ data }}>
+{/*         <AppDispatchContext.Provider value={dispatch}> */}
           <Dashboard />
-        </AppDispatchContext.Provider>
+{/*         </AppDispatchContext.Provider> */}
       </AppContext.Provider>
     )
   );

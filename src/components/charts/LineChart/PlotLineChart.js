@@ -8,9 +8,10 @@ const PlotLineChart = (appdata) => {
   const [filter, setFilter] = useState("total"); // genders: total, men, women
   const wrapper = useRef(null);
 
-  const filterData = (filter) => {
+  useEffect(() => {
+  const filterData = (gender) => {
     let x = d3.filter(appdata.data, (d) => d["literal"] === town);
-    switch (filter) {
+    switch (gender) {
       case "total":
         x = x.map((d) => ({
           date: new Date(d["any"], 0),
@@ -49,7 +50,6 @@ const PlotLineChart = (appdata) => {
     }
   };
 
-  useEffect(() => {
     const data = filterData(filter);
     if (data !== undefined) {
       const chart = Plot.plot({
@@ -108,7 +108,7 @@ const PlotLineChart = (appdata) => {
       wrapper.current.append(chart);
       return () => chart.remove();
     }
-  }, [wrapper, town, filter]);
+  }, [wrapper, town, filter, appdata.data]);
 
   // unique names of municipios sorted alphabetically
   const towns = [

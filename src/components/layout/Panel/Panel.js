@@ -25,7 +25,7 @@ function Panel() {
         );
         setData(row);
       }
-    }
+    }// eslint-disable-next-line
   }, [searchValue]);
 
   return (

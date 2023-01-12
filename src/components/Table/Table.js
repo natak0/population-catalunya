@@ -1,12 +1,7 @@
 import React from "react";
 import "./Table.css";
 
-const Table = ({ content, setState }) => {
-  const sortTable = (column) => {
-    const data = content;
-    data.sort((first, second) => first[column] - second[column]);
-    setState(data);
-  };
+const Table = ({ content}) => {
 
   const names = {
     any: "Any",
@@ -25,9 +20,6 @@ const Table = ({ content, setState }) => {
   return content.length > 0 ? (
     <div className="table-container">
       <table className="table">
-        {/*         <caption>
-          Població de Catalunya per municipi, rang d'edat i sexe
-        </caption> */}
         <thead>
           <tr className="table__summary">
             <th colSpan="3">{content && `${content.length} Filas`}</th>
@@ -38,7 +30,7 @@ const Table = ({ content, setState }) => {
           <tr className="table__head">
             {Object.entries(names).map(([key, value]) => {
               return (
-                <th key={key} onClick={() => sortTable(key)}>
+                <th key={key}>
                   {value}
                 </th>
               );

@@ -4,6 +4,8 @@ import Select from "../../Select/Select";
 
 const DonutChart = (appdata) => {
   const [year, setYear] = useState("2019");
+  const years = [...new Set(appdata.data.map((item) => item.any))]; // unique years
+  
   const wrapper = useRef(null);
 
   const width = 400;
@@ -86,9 +88,7 @@ const DonutChart = (appdata) => {
             : "Catalunya"
         } - any ${year}.`
       );
-  }, [wrapper, year, appdata.data]);
-
-  const years = [...new Set(appdata.data.map((item) => item.any))]; // unique years
+  }, [wrapper, year, appdata.data, years.length]);
 
   return (
     <div ref={wrapper}>
