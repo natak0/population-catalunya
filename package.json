@@ -1,6 +1,7 @@
 {
   "name": "catalan-population",
   "version": "0.1.0",
+  "homepage": "https://natak0.github.io/population-catalunya",
   "private": true,
   "dependencies": {
     "@observablehq/plot": "^0.6.1",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "D": "^1.0.0",
     "d3": "^7.8.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "webpack --mode=development"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
