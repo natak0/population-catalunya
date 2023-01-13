@@ -1,8 +1,15 @@
 {
   "short_name": "Població dels municipis de Catalunya segregada per rang d'edat i sexe.",
   "name": "Població dels municipis de Catalunya segregada per rang d'edat i sexe.",
-  "start_url": ".",
+  "start_url": "https://natak0.github.io/population-catalunya",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
 }
