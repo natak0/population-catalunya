@@ -9,10 +9,19 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        "https://analisi.transparenciacatalunya.cat/resource/b4rr-d25b.json?$limit=150000"
-      ).then((res) => res.json());
-      setData(response);
+      const cached_data = localStorage.getItem("cached_data");
+      if (cached_data === null) {
+        const response = await fetch(
+          "https://analisi.transparenciacatalunya.cat/resource/b4rr-d25b.json?$limit=150000"
+        ).then((res) => res.json());
+        if (response !== null) {
+          localStorage.setItem("cached_data", JSON.stringify(response));
+          setData(response);
+        }
+      } else {
+        const json = localStorage.getItem("cached_data");
+        setData(JSON.parse(json));
+      }
     }
     fetchData();
   }, []);

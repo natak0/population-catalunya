@@ -7,25 +7,25 @@ import Table from "../../Table/Table";
 import ChartWrapper from "../navigation/ChartWrapper/ChartWrapper";
 import "./Panel.css";
 
-function Panel() {
-  const appData = useContext(AppContext);
+const Panel = () => {
+  const appdata = useContext(AppContext);
   const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState();
 
   useEffect(() => {
-    if (searchValue.length > 0 && appData.data) {
+    if (searchValue.length > 0 && appdata.data) {
       if (searchValue.length <= 6 && Number.isInteger(parseInt(searchValue))) {
-        const row = appData.data.filter((value) =>
+        const row = appdata.data.filter((value) =>
           value.codi.toLowerCase().includes(searchValue.toLowerCase())
         );
         setData(row);
       } else {
-        const row = appData.data.filter((value) =>
+        const row = appdata.data.filter((value) =>
           value.literal.toLowerCase().includes(searchValue.toLowerCase())
         );
         setData(row);
       }
-    }// eslint-disable-next-line
+    } // eslint-disable-next-line
   }, [searchValue]);
 
   return (
@@ -37,7 +37,7 @@ function Panel() {
         Informació elaborada per l'IDESCAT a partir del Padró municipal
         d'habitants. Dades del darrer padró disponible, any 2019-2020.
       </p>
-      {appData && appData.data && (
+      {appdata.data && appdata.data && (
         <div className="panel--row">
           <ChartWrapper>
             <div className="chart-container__item">
@@ -45,17 +45,17 @@ function Panel() {
                 data={
                   data && searchValue.length > 0 && data.length === 2
                     ? data
-                    : appData.data
+                    : appdata.data
                 }
               />
             </div>
           </ChartWrapper>
           <ChartWrapper>
             <div className="chart-container__item">
-              <PlotLineChart data={appData.data} />
+              <PlotLineChart data={appdata.data} />
             </div>
           </ChartWrapper>
-          {/*   {appData !== undefined && <Map points={appData.data} />} */}
+          {/*   {appdata.data !== undefined && <Map points={appdata.data} />} */}
         </div>
       )}
       <div className="panel--right"> </div>
@@ -65,15 +65,15 @@ function Panel() {
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
-        {appData && (
+        {appdata.data && (
           <Table
-            content={data && searchValue.length > 0 ? data : appData.data}
+            content={data && searchValue.length > 0 ? data : appdata.data}
             setState={setData}
           />
         )}
       </div>
     </main>
   );
-}
+};
 
 export default Panel;

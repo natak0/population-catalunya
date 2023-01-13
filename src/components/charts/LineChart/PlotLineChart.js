@@ -9,46 +9,46 @@ const PlotLineChart = (appdata) => {
   const wrapper = useRef(null);
 
   useEffect(() => {
-  const filterData = (gender) => {
-    let x = d3.filter(appdata.data, (d) => d["literal"] === town);
-    switch (gender) {
-      case "total":
-        x = x.map((d) => ({
-          date: new Date(d["any"], 0),
-          _0_a_14_anys: "total de 0 a 14 anys",
-          _0_a_14_anys_number: +d["total_de_0_a_14_anys"],
-          _15_a_64_anys: "total de 15 a 64 anys",
-          _15_a_64_anys_number: +d["total_de_15_a_64_anys"],
-          _65_anys_i_m_s: "total de 65 anys i mes",
-          _65_anys_i_m_s_number: +d["total_de_65_anys_i_m_s"],
-        }));
-        return x;
-      case "women":
-        x = x.map((d) => ({
-          date: new Date(d["any"], 0),
-          _0_a_14_anys: "dones de 0 a 14 anys",
-          _0_a_14_anys_number: +d["dones_de_0_a_14_anys"],
-          _15_a_64_anys: "dones de 15 a 64 anys",
-          _15_a_64_anys_number: +d["dones_de_15_a_64_anys"],
-          _65_anys_i_m_s: "dones de 65 anys i mes",
-          _65_anys_i_m_s_number: +d["dones_de_65_anys_i_m_s"],
-        }));
-        return x;
-      case "men":
-        x = x.map((d) => ({
-          date: new Date(d["any"], 0),
-          _0_a_14_anys: "homes de 0 a 14 anys",
-          _0_a_14_anys_number: +d["homes_de_0_a_14_anys"],
-          _15_a_64_anys: "homes de 15 a 64 anys",
-          _15_a_64_anys_number: +d["homes_de_15_a_64_anys"],
-          _65_anys_i_m_s: "homes de 65 anys i mes",
-          _65_anys_i_m_s_number: +d["homes_de_65_anys_i_m_s"],
-        }));
-        return x;
-      default:
-        break;
-    }
-  };
+    const filterData = (gender) => {
+      let x = d3.filter(appdata.data, (d) => d["literal"] === town);
+      switch (gender) {
+        case "total":
+          x = x.map((d) => ({
+            date: new Date(d["any"], 0),
+            _0_a_14_anys: "total de 0 a 14 anys",
+            _0_a_14_anys_number: +d["total_de_0_a_14_anys"],
+            _15_a_64_anys: "total de 15 a 64 anys",
+            _15_a_64_anys_number: +d["total_de_15_a_64_anys"],
+            _65_anys_i_m_s: "total de 65 anys i mes",
+            _65_anys_i_m_s_number: +d["total_de_65_anys_i_m_s"],
+          }));
+          return x;
+        case "women":
+          x = x.map((d) => ({
+            date: new Date(d["any"], 0),
+            _0_a_14_anys: "dones de 0 a 14 anys",
+            _0_a_14_anys_number: +d["dones_de_0_a_14_anys"],
+            _15_a_64_anys: "dones de 15 a 64 anys",
+            _15_a_64_anys_number: +d["dones_de_15_a_64_anys"],
+            _65_anys_i_m_s: "dones de 65 anys i mes",
+            _65_anys_i_m_s_number: +d["dones_de_65_anys_i_m_s"],
+          }));
+          return x;
+        case "men":
+          x = x.map((d) => ({
+            date: new Date(d["any"], 0),
+            _0_a_14_anys: "homes de 0 a 14 anys",
+            _0_a_14_anys_number: +d["homes_de_0_a_14_anys"],
+            _15_a_64_anys: "homes de 15 a 64 anys",
+            _15_a_64_anys_number: +d["homes_de_15_a_64_anys"],
+            _65_anys_i_m_s: "homes de 65 anys i mes",
+            _65_anys_i_m_s_number: +d["homes_de_65_anys_i_m_s"],
+          }));
+          return x;
+        default:
+          break;
+      }
+    };
 
     const data = filterData(filter);
     if (data !== undefined) {
