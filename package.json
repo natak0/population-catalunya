@@ -1,8 +1,7 @@
 {
   "name": "catalan-population",
   "version": "0.1.0",
-  "homepage": "https://natak0.github.io/population-catalunya",
-  "private": true,
+  "homepage": ".",
   "dependencies": {
     "@observablehq/plot": "^0.6.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -44,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.4",
     "webpack-cli": "^5.0.1"
   }
 }

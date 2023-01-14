@@ -27,16 +27,14 @@ function App() {
   }, []);
 
   return (
-    data && (
-      <AppContext.Provider value={{ data }}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
-      </AppContext.Provider>
-    )
+    <AppContext.Provider value={{ data }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 
