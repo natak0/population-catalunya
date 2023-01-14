@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const cached_data = localStorage.getItem("cached_data");
-      if (cached_data === null) {
+      if (cached_data == null) {
         const response = await fetch(
           "https://analisi.transparenciacatalunya.cat/resource/b4rr-d25b.json?$limit=150000"
         ).then((res) => res.json());
@@ -19,8 +19,7 @@ function App() {
           setData(response);
         }
       } else {
-        const json = localStorage.getItem("cached_data");
-        setData(JSON.parse(json));
+        setData(JSON.parse(cached_data));
       }
     }
     fetchData();
