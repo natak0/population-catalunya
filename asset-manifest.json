@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/population-catalunya/static/css/main.afe66108.css",
-    "main.js": "/population-catalunya/static/js/main.929e1196.js",
-    "static/js/787.fc3dc018.chunk.js": "/population-catalunya/static/js/787.fc3dc018.chunk.js",
-    "static/media/login.svg": "/population-catalunya/static/media/login.be7f3962342b23f4e7d3039a8904e06d.svg",
-    "static/media/search.svg": "/population-catalunya/static/media/search.268befe0e3cfbb7cafe0875649e204d1.svg",
-    "index.html": "/population-catalunya/index.html",
-    "static/media/home.svg": "/population-catalunya/static/media/home.1986a2d6e82a6333ca15141715155e6c.svg",
-    "main.afe66108.css.map": "/population-catalunya/static/css/main.afe66108.css.map",
-    "main.929e1196.js.map": "/population-catalunya/static/js/main.929e1196.js.map",
-    "787.fc3dc018.chunk.js.map": "/population-catalunya/static/js/787.fc3dc018.chunk.js.map"
+    "main.css": "./static/css/main.afe66108.css",
+    "main.js": "./static/js/main.bdc5d904.js",
+    "static/js/787.fc3dc018.chunk.js": "./static/js/787.fc3dc018.chunk.js",
+    "static/media/login.svg": "./static/media/login.be7f3962342b23f4e7d3039a8904e06d.svg",
+    "static/media/search.svg": "./static/media/search.268befe0e3cfbb7cafe0875649e204d1.svg",
+    "index.html": "./index.html",
+    "static/media/home.svg": "./static/media/home.1986a2d6e82a6333ca15141715155e6c.svg",
+    "main.afe66108.css.map": "./static/css/main.afe66108.css.map",
+    "main.bdc5d904.js.map": "./static/js/main.bdc5d904.js.map",
+    "787.fc3dc018.chunk.js.map": "./static/js/787.fc3dc018.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afe66108.css",
-    "static/js/main.929e1196.js"
+    "static/js/main.bdc5d904.js"
   ]
 }
