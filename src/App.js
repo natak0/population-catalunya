@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { AppContext } from "./services/AppContext/AppContextCreator";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login/Login";
 
 function App() {
   const [data, setData] = useState();
@@ -27,12 +25,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ data }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+      <Dashboard />
     </AppContext.Provider>
   );
 }

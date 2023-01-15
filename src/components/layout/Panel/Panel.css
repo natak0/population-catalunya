@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 32px;
   height: 100vh;
+  align-items: center;
 }
 .panel--row {
   display: flex;
@@ -28,8 +29,12 @@
   }
   .panel--row {
     flex-direction: column;
+    width: 100%;
   }
-    .panel h1,
+  .panel__table {
+    width: 100%;
+  }
+  .panel h1,
   .panel p {
     display: block;
   }
